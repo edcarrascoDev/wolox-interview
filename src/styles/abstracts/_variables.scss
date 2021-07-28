@@ -1,0 +1,72 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass Variables.
+// -----------------------------------------------------------------------------
+
+// =============================================================================
+// Color Variables.
+// =============================================================================
+
+// Main brand color
+/// @type Color
+$primary-color: #2aa7df !default;
+
+// Secondary color
+/// @type Color
+$secondary-color: #97cf00 !default;
+
+// Light color
+/// @type Color
+$light-color: #ffffff !default;
+
+// Copy text color
+/// @type Color
+$text-color: #1b263c !default;
+
+// Copy title color
+/// @type Color
+$title-color: $primary-color !default;
+
+// Copy title alternative color
+/// @type Color
+$title-alternative-color: $secondary-color !default;
+
+// White color
+/// @type Color
+$white-color: #ffffff !default;
+
+// Dark color
+/// @type Color
+$dark-color: #000000 !default;
+
+// Dark color
+/// @type Color
+$light-grey: #f2f5fa !default;
+
+// warn color
+/// @type Color
+$warn-color: #d52424 !default;
+
+// success color
+/// @type Color
+$success-color: #3ce5ac !default;
+
+// =============================================================================
+// Fonts Variables.
+// =============================================================================
+
+/// Regular font family
+/// @type List
+$text-font-stack: 'Montserrat', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial',
+    sans-serif !default;
+
+/// Title font family
+/// @type List
+$alternate-font-stack: 'Fira Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial',
+    sans-serif !default;
+
+// =============================================================================
+// Sizes Variables.
+// =============================================================================
+
+/// button Variables
+$button-height: 38px;

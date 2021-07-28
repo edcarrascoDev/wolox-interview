@@ -28,7 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/styles.scss"
             ],
             "scripts": []
           },
@@ -92,7 +92,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/styles.scss"
             ],
             "scripts": []
           }
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "wolox-interview"
+    }
+  },
+  "defaultProject": "wolox-interview",
+  "cli": {
+    "analytics": "36d887a2-2d0b-4d1b-ac1c-4690656862e8"
+  }
 }

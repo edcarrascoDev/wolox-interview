@@ -1,0 +1,51 @@
+/**
+ * MEDIA BREAKPOINTS
+ */
+
+@mixin media-breakpoint-down($size) {
+    @if $size == xs {
+        @media only screen and (max-width: 575.98px) {
+            @content;
+        }
+    } @else if $size == sm {
+        @media only screen and (max-width: 767.98px) {
+            @content;
+        }
+    } @else if $size == md {
+        @media only screen and (max-width: 991.98px) {
+            @content;
+        }
+    } @else if $size == lg {
+        @media only screen and (max-width: 1199.98px) {
+            @content;
+        }
+    } @else if $size == xl {
+        @media only screen and (max-width: 1440px) {
+            @content;
+        }
+    }
+}
+
+@mixin media-breakpoint-up($size) {
+    @if $size == xs {
+        @media only screen and (min-width: 576px) {
+            @content;
+        }
+    } @else if $size == sm {
+        @media only screen and (min-width: 768px) {
+            @content;
+        }
+    } @else if $size == md {
+        @media only screen and (min-width: 992px) {
+            @content;
+        }
+    } @else if $size == lg {
+        @media only screen and (min-width: 1200px) {
+            @content;
+        }
+    } @else if $size == xl {
+        @media only screen and (min-width: 1440.01px) {
+            @content;
+        }
+    }
+}

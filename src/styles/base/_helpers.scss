@@ -1,0 +1,68 @@
+/** **************************************
+* NEW margin and padding helpers
+*****************************************/
+
+$i: 0;
+@while $i <= 50 {
+    .p-#{$i} {
+        padding: #{$i / 16}rem !important;
+    }
+
+    .py-#{$i} {
+        padding-top: #{$i / 16}rem !important;
+        padding-bottom: #{$i / 16}rem !important;
+    }
+
+    .px-#{$i} {
+        padding-right: #{$i / 16}rem !important;
+        padding-left: #{$i / 16}rem !important;
+    }
+
+    .pt-#{$i} {
+        padding-top: #{$i / 16}rem !important;
+    }
+
+    .pr-#{$i} {
+        padding-right: #{$i / 16}rem !important;
+    }
+
+    .pb-#{$i} {
+        padding-bottom: #{$i / 16}rem !important;
+    }
+
+    .pl-#{$i} {
+        padding-left: #{$i / 16}rem !important;
+    }
+
+    .m-#{$i} {
+        margin: #{$i / 16}rem !important;
+    }
+
+    .my-#{$i} {
+        margin-top: #{$i / 16}rem !important;
+        margin-bottom: #{$i / 16}rem !important;
+    }
+
+    .mx-#{$i} {
+        margin-right: #{$i / 16}rem !important;
+        margin-left: #{$i / 16}rem !important;
+    }
+
+    .mt-#{$i} {
+        margin-top: #{$i / 16}rem !important;
+    }
+
+    .mr-#{$i} {
+        margin-right: #{$i / 16}rem !important;
+    }
+
+    .mb-#{$i} {
+        margin-bottom: #{$i / 16}rem !important;
+    }
+
+    .ml-#{$i} {
+        margin-left: #{$i / 16}rem !important;
+    }
+
+    $i: $i + 5;
+}

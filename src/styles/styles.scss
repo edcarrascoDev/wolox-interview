@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Montserrat:wght@400;600&display=swap');
+
+@import
+'abstracts/variables',
+'abstracts/mixins';
+
+@import
+'base/base',
+'base/helpers';
+
+
+@import
+'components/button';

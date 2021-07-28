@@ -1,0 +1,8 @@
+# Add files here to ignore them from prettier formatting
+
+/.vscode
+/firebase
+/dist
+/coverage
+/node_modules
+package-lock.json

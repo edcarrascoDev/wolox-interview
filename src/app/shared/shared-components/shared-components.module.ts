@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { HeroComponent } from './hero/hero.component';
 import { SocialBoxComponent } from './social-box/social-box.component';
 import { SpecsComponent } from './specs/specs.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
     declarations: [
@@ -16,8 +17,16 @@ import { SpecsComponent } from './specs/specs.component';
         HeroComponent,
         SocialBoxComponent,
         SpecsComponent,
+        FooterComponent,
     ],
     imports: [CommonModule, RouterModule],
-    exports: [HeaderComponent, ButtonComponent, HeroComponent, SocialBoxComponent, SpecsComponent],
+    exports: [
+        HeaderComponent,
+        ButtonComponent,
+        HeroComponent,
+        SocialBoxComponent,
+        SpecsComponent,
+        FooterComponent,
+    ],
 })
 export class SharedComponentsModule {}

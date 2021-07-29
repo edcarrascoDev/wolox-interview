@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ButtonStyle, Color } from '../../definitions/enum';
 
 @Component({
@@ -9,6 +9,8 @@ import { ButtonStyle, Color } from '../../definitions/enum';
 export class ButtonComponent {
     @Input() color: Color = Color.Primary;
     @Input() style: ButtonStyle = ButtonStyle.Raised;
+
+    @Output() emitClick: EventEmitter<void> = new EventEmitter<void>();
 
     constructor() {}
 

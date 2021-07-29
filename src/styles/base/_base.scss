@@ -21,8 +21,15 @@ html {
  */
 
 body {
+    font-family: $text-font-stack;
+    color: $text-color;
     background-color: $white-color;
     width: 100%;
+
+    /**
+     * todo remove once the page is done
+     */
+    height: 200vh;
 }
 
 /**
@@ -43,4 +50,22 @@ body {
 ul {
     list-style: none;
     padding-left: 0;
+}
+
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: map_get($container, padding);
+    padding-right: map_get($container, padding);
+
+    @include media-breakpoint-up(sm) {
+        max-width: map_get($container, max-width-sm);
+    }
+    @include media-breakpoint-up(md) {
+        max-width: map_get($container, max-width-md);
+    }
+    @include media-breakpoint-up(lg) {
+        max-width: map_get($container, max-width-lg);
+    }
 }

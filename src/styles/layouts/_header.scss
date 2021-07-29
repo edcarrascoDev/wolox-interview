@@ -1,0 +1,52 @@
+.header {
+    position: fixed;
+    width: 100%;
+    transition: all ease-in-out 300ms;
+    background: $light-color;
+    height: 40px;
+
+    .header {
+        &__container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &__logo {
+            img {
+                display: block;
+                max-width: 100px;
+            }
+        }
+    }
+
+    &.header {
+        &--on-top {
+            height: 70px;
+            background: transparent;
+        }
+    }
+
+    &:not(&--on-top) {
+        box-shadow: $common-shadow;
+    }
+
+    @include media-breakpoint-up(md) {
+        height: 60px;
+
+        .header {
+            &__logo {
+                img {
+                    max-width: 200px;
+                }
+            }
+        }
+
+        &.header {
+            &--on-top {
+                height: 100px;
+            }
+        }
+    }
+}

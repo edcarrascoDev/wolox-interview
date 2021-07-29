@@ -1,1 +1,11 @@
-<app-button [style]="buttonStyle.Stroked">Registro</app-button>
+<header class="header" [class.header--on-top]="scrollPosition === 0">
+    <div class="header__container container">
+        <div class="header__logo">
+            <img src="../assets/Icons/logo_full_color.svg" alt="" />
+        </div>
+
+        <div class="header__nav">
+            <app-navigation></app-navigation>
+        </div>
+    </div>
+</header>

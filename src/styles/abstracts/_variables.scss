@@ -50,6 +50,10 @@ $warn-color: #d52424 !default;
 /// @type Color
 $success-color: #3ce5ac !default;
 
+// Shadow color
+/// @type Color
+$common-shadow: 0 8px 20px 0 rgb(0 0 0 / 10%);
+
 // =============================================================================
 // Fonts Variables.
 // =============================================================================
@@ -63,6 +67,18 @@ $text-font-stack: 'Montserrat', 'Helvetica Neue Light', 'Helvetica Neue', 'Helve
 /// @type List
 $alternate-font-stack: 'Fira Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial',
     sans-serif !default;
+
+
+// =============================================================================
+// Container Variables.
+// =============================================================================
+
+$container: (
+    padding: 21px,
+    max-width-lg: 1080px,
+    max-width-md: 920px,
+    max-width-sm: 740px,
+);
 
 // =============================================================================
 // Sizes Variables.

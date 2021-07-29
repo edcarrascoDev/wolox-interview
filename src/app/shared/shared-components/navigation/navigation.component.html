@@ -1,0 +1,26 @@
+<nav class="nav" [class.nav--opened]="menuOpened">
+    <div class="nav__logo" *ngIf="menuOpened">
+        <img src="../assets/Icons/logo_full_color.svg" alt="" />
+    </div>
+    <ul class="nav__list">
+        <li *ngFor="let menu of navigationMenu" class="nav__item">
+            <ng-template [ngIf]="menu.isButton">
+                <app-button [routerLink]="[menu.link]" [style]="buttonStyle.Stroked">{{
+                    menu.title
+                }}</app-button>
+            </ng-template>
+            <ng-template [ngIf]="menu.hasScrollEffect">
+                <a (click)="scrollTo(menu.sectionId)">{{ menu.title }}</a>
+            </ng-template>
+            <ng-template [ngIf]="!menu.hasScrollEffect && !menu.isButton">
+                <a [routerLink]="[menu.link]"> {{ menu.title }} </a>
+            </ng-template>
+        </li>
+    </ul>
+</nav>
+
+<div class="hamburger">
+    <button (click)="toggleMenu()">
+        <span></span>
+    </button>
+</div>

@@ -1,0 +1,16 @@
+<div class="specs">
+    <div class="specs__container container">
+        <h3 class="text-center heading heading--h3 mb-40 fw-500">
+            Entre los beneficios que ofrecemos se encuentran <span class="text-primary"> ;)</span>
+        </h3>
+
+        <div class="specs__list">
+            <div *ngFor="let spec of specs" class="spec">
+                <div class="spec__image">
+                    <img [src]="spec.imageUrl" [alt]="spec.title" />
+                </div>
+                <h4 class="heading heading--h4">{{ spec.title }}</h4>
+            </div>
+        </div>
+    </div>
+</div>

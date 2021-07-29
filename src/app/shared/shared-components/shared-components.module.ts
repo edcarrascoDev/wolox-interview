@@ -6,7 +6,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { RouterModule } from '@angular/router';
 import { HeroComponent } from './hero/hero.component';
 import { SocialBoxComponent } from './social-box/social-box.component';
-import { BenefitsComponent } from './benefits/benefits.component';
+import { SpecsComponent } from './specs/specs.component';
 
 @NgModule({
     declarations: [
@@ -15,9 +15,9 @@ import { BenefitsComponent } from './benefits/benefits.component';
         NavigationComponent,
         HeroComponent,
         SocialBoxComponent,
-        BenefitsComponent,
+        SpecsComponent,
     ],
     imports: [CommonModule, RouterModule],
-    exports: [HeaderComponent, ButtonComponent, HeroComponent, SocialBoxComponent],
+    exports: [HeaderComponent, ButtonComponent, HeroComponent, SocialBoxComponent, SpecsComponent],
 })
 export class SharedComponentsModule {}

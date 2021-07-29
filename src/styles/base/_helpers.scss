@@ -77,6 +77,10 @@ $i: 0;
     $i: $i + 100;
 }
 
+.text-center {
+    text-align: center !important;
+}
+
 .text-primary {
     color: $primary-color !important;
 }

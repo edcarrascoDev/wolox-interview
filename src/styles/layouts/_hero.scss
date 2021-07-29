@@ -2,6 +2,8 @@
     background-size: cover;
     .hero {
         &__container {
+            position: relative;
+            max-height: 800px;
             height: 100vh;
             display: flex;
             justify-content: space-between;
@@ -29,7 +31,7 @@
         }
     }
 
-    @include media-breakpoint-down(xs) {
+    @include media-breakpoint-down(md) {
         .hero {
             &__content {
                 margin-bottom: 100px;

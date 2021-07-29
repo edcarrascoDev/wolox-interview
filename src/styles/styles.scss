@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Montserrat:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Montserrat:wght@400;500;600;700&display=swap');
 
 @import
 'abstracts/variables',
@@ -13,7 +13,8 @@
 'layouts/header',
 'layouts/hero',
 'layouts/nav',
-'layouts/social-box';
+'layouts/social-box',
+'layouts/specs';
 
 @import
 'components/button',

@@ -1,3 +1,19 @@
-<button (click)="emitClick.emit()" class="wx-button" [class]="getButtonClasses()">
+<a
+    *ngIf="href; else buttonTemplate"
+    [href]="href"
+    class="wx-button"
+    [target]="target"
+    [class]="getButtonClasses()"
+>
+    <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
+</a>
+
+<ng-template #buttonTemplate>
+    <button (click)="emitClick.emit()" class="wx-button" [class]="getButtonClasses()">
+        <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
+    </button>
+</ng-template>
+
+<ng-template #contentTemplate>
     <ng-content></ng-content>
-</button>
+</ng-template>

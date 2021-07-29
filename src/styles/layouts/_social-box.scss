@@ -1,0 +1,71 @@
+.social-box {
+    .social-box {
+        &__container {
+            display: grid;
+            > div {
+                min-height: 350px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 20px;
+            }
+        }
+
+        &__wrapper  {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: $light-grey;
+
+            h2 {
+                max-width: 300px;
+            }
+        }
+
+        &__hero {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            flex-direction: column;
+        }
+
+        &__bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: $dark-color;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                filter: grayscale(1);
+                opacity: 0.5;
+            }
+        }
+
+        &__twitter {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            justify-content: center;
+            color: $light-color;
+
+            img {
+                max-width: 40px;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .social-box {
+            &__container {
+                grid-template-columns: 60% 40%;
+            }
+        }
+    }
+}

@@ -4,6 +4,7 @@
     transition: all ease-in-out 300ms;
     background: $light-color;
     height: 40px;
+    z-index: 9999;
 
     .header {
         &__container {

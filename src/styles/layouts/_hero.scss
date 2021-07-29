@@ -1,0 +1,47 @@
+.hero {
+    background-size: cover;
+    .hero {
+        &__container {
+            height: 100vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__content {
+            max-width: 380px;
+        }
+
+        &__image {
+            img {
+                max-width: 100%;
+                transform: scaleX(-1);
+            }
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .hero {
+            &__container {
+                height: 60vh;
+                min-height: 680px;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(xs) {
+        .hero {
+            &__content {
+                margin-bottom: 100px;
+            }
+
+            &__image {
+                position: absolute;
+                z-index: -1;
+                width: 60%;
+                right: 20px;
+                bottom: 10px;
+            }
+        }
+    }
+}

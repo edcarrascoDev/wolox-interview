@@ -9,6 +9,8 @@ import { ButtonStyle, Color } from '../../definitions/enum';
 export class ButtonComponent {
     @Input() color: Color = Color.Primary;
     @Input() style: ButtonStyle = ButtonStyle.Raised;
+    @Input() href: string;
+    @Input() target = '_blank';
 
     @Output() emitClick: EventEmitter<void> = new EventEmitter<void>();
 

@@ -67,6 +67,12 @@
         & ~ .hamburger {
             display: none;
         }
+
+        .nav {
+            &__logo {
+                display: none;
+            }
+        }
     }
 
     @include media-breakpoint-down(md) {

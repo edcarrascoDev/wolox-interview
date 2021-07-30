@@ -9,5 +9,6 @@ export const NAVIGATION_MENU: NavigationMenu[] = [
         sectionId: 'registryPage',
         hasScrollEffect: false,
         isButton: true,
+        hideOnSessionOpen: true,
     },
 ];

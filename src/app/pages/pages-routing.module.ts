@@ -15,6 +15,10 @@ const routes: Routes = [
                 path: 'registro',
                 loadChildren: () => import('./sign-up/sign-up.module').then((m) => m.SignUpModule),
             },
+            {
+                path: 'pokemon',
+                loadChildren: () => import('./pokemon/pokemon.module').then((m) => m.PokemonModule),
+            },
         ],
     },
 ];

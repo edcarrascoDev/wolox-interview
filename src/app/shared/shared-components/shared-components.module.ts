@@ -10,6 +10,8 @@ import { SpecsComponent } from './specs/specs.component';
 import { FooterComponent } from './footer/footer.component';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CountryListComponent } from './country-list/country-list.component';
+import { HttpService } from '../../http/http.service';
 
 @NgModule({
     declarations: [
@@ -21,6 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
         SpecsComponent,
         FooterComponent,
         SignUpFormComponent,
+        CountryListComponent,
     ],
     imports: [CommonModule, RouterModule, ReactiveFormsModule],
     exports: [
@@ -31,6 +34,8 @@ import { ReactiveFormsModule } from '@angular/forms';
         SpecsComponent,
         FooterComponent,
         SignUpFormComponent,
+        CountryListComponent,
     ],
+    providers: [HttpService],
 })
 export class SharedComponentsModule {}

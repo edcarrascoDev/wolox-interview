@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonComponent } from '../../abstract/common-component';
-import { takeUntil } from 'rxjs/operators';
 import { CustomValidators } from '../../validators/custom-validators';
 import { UiService } from '../../../ui/ui.service';
+import { Country } from '../../definitions/models';
+import { HttpService } from '../../../http/http.service';
+import { take } from 'rxjs/operators';
 
 @Component({
     selector: 'app-sign-up-form',
@@ -11,9 +13,13 @@ import { UiService } from '../../../ui/ui.service';
     styleUrls: ['./sign-up-form.component.scss'],
 })
 export class SignUpFormComponent extends CommonComponent implements OnInit {
-    signUpForm: FormGroup;
+    form: FormGroup;
 
-    constructor(private formBuilder: FormBuilder, private uiService: UiService) {
+    constructor(
+        private formBuilder: FormBuilder,
+        private uiService: UiService,
+        private httpService: HttpService,
+    ) {
         super();
     }
 
@@ -22,11 +28,12 @@ export class SignUpFormComponent extends CommonComponent implements OnInit {
     }
 
     initForm() {
-        this.signUpForm = this.formBuilder.group(
+        this.form = this.formBuilder.group(
             {
                 name: [null, [Validators.required, Validators.maxLength(30)]],
                 lastname: [null, [Validators.required, Validators.maxLength(30)]],
                 country: [null, Validators.required],
+                province: [null, Validators.required],
                 email: [null, [Validators.required, Validators.email]],
                 phone: [
                     null,
@@ -41,31 +48,38 @@ export class SignUpFormComponent extends CommonComponent implements OnInit {
         this.listenToFormChange();
     }
 
-    listenToFormChange() {
-        this.signUpForm.statusChanges.pipe(takeUntil(this.destroyed$)).subscribe((status) => {
-            console.log(status, this.signUpForm);
-        });
-    }
-
-    formChange(formControlName: string, value: any) {
-        console.log(formControlName, value);
-        this.signUpForm.patchValue({
-            [formControlName]: value,
-        });
-    }
+    listenToFormChange() {}
 
     markControlsAsTouched() {}
 
-    getError(controlName: string): string {
-        const { errors } = this.signUpForm.get(controlName);
+    setCountryValue(country: Country) {
+        if (country) {
+            this.form.patchValue({ country: country.name, province: country.capital });
+        } else {
+            this.form.get('country').markAsDirty();
+        }
+    }
 
-        return this.signUpForm.get(controlName).dirty || this.signUpForm.get(controlName).touched
+    getError(controlName: string): string {
+        const { errors } = this.form.get(controlName);
+
+        return this.form.get(controlName).dirty || this.form.get(controlName).touched
             ? this.uiService.getControlError(errors)
             : null;
     }
 
     submit() {
-        if (this.signUpForm.valid) {
+        if (this.form.valid) {
+            this.httpService
+                .postRegistry(this.form.value)
+                .pipe(take(1))
+                .subscribe((response) => {
+                    if (response) {
+                        this.uiService.setLocalStorage('user', this.form.value);
+                    }
+                });
+        } else {
+            this.markControlsAsTouched();
         }
     }
 }

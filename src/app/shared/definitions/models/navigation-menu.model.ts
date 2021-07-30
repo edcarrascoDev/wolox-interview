@@ -4,4 +4,5 @@ export interface NavigationMenu {
     link?: string;
     hasScrollEffect?: boolean;
     isButton?: boolean;
+    hideOnSessionOpen?: boolean;
 }

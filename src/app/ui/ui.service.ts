@@ -32,4 +32,12 @@ export class UiService {
 
         return '';
     }
+
+    getLocalStorage<T>(key: string): T {
+        return localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : {};
+    }
+
+    setLocalStorage<T>(key: string, data: T) {
+        localStorage.setItem(key, JSON.stringify(data));
+    }
 }

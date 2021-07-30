@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NAVIGATION_MENU } from '../../definitions/contants';
 import { ButtonStyle } from '../../definitions/enum';
+import { UiService } from '../../../ui/ui.service';
 
 @Component({
     selector: 'app-navigation',
@@ -12,7 +13,13 @@ export class NavigationComponent {
     navigationMenu = NAVIGATION_MENU;
     menuOpened = false;
 
-    constructor() {}
+    sessionOpen = false;
+
+    constructor(private uiService: UiService) {
+        if (Object.keys(this.uiService.getLocalStorage('user')).length > 0) {
+            this.sessionOpen = true;
+        }
+    }
 
     scrollTo(sectionId: string) {
         const el = document.getElementById(sectionId);

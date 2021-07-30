@@ -1,0 +1,30 @@
+<form [formGroup]="form" class="country-select">
+    <label class="form-group__label" for="country">País</label>
+    <input
+        autocomplete="off"
+        class="form-group__input"
+        name="country"
+        id="country"
+        formControlName="country"
+        (focus)="selectedCountry = null"
+        (focusout)="onFocusOut()"
+    />
+    <img
+        *ngIf="selectedCountry"
+        [src]="selectedCountry.flag"
+        [alt]="selectedCountry.name"
+        class="country-select__flag"
+    />
+    <ng-content></ng-content>
+    <ng-template [ngIf]="countries.length > 0">
+        <div class="country-select__list">
+            <ul>
+                <li *ngFor="let item of countries" (click)="selectCountry(item)">
+                    <span>{{ item.name }}</span>
+                    <img [src]="item.flag" alt="" />
+                </li>
+            </ul>
+        </div>
+        <div class="country-select__backdrop" (click)="countries = []"></div>
+    </ng-template>
+</form>

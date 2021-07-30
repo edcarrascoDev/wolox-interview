@@ -1,4 +1,4 @@
-<form class="form" [formGroup]="signUpForm">
+<form class="form" [formGroup]="form">
     <div class="form__row">
         <div class="form-group">
             <label class="form-group__label" for="name">Nombre</label>
@@ -27,21 +27,15 @@
         <div class="form-group">
             <label class="form-group__label" for="phone">Teléfono</label>
             <input class="form-group__input" id="phone" formControlName="phone" type="number" />
-            <span class="form-group__error" class="form-group__error" *ngIf="getError('phone')">{{
-                getError('phone')
-            }}</span>
+            <span class="form-group__error" *ngIf="getError('phone')">{{ getError('phone') }}</span>
         </div>
 
         <div class="form-group">
-            <label class="form-group__label" for="country">País</label>
-            <select class="form-group__input" name="country" id="country" formControlName="country">
-                <option value=""></option>
-                <option value="colombia">Colombia</option>
-                <option value="ecuador">Ecuador</option>
-            </select>
-            <span class="form-group__error" *ngIf="getError('country')">{{
-                getError('country')
-            }}</span>
+            <app-country-list (emitValue)="setCountryValue($event)">
+                <span class="form-group__error" *ngIf="getError('country')">{{
+                    getError('country')
+                }}</span></app-country-list
+            >
         </div>
     </div>
 

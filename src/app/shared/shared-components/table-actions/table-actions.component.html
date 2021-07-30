@@ -1,0 +1,32 @@
+<div class="table-actions my-30">
+    <div class="table-actions__counter">
+        Mostrando
+        <form [formGroup]="form" class="form-group form-group--compact mb-0">
+            <select class="form-group__input" formControlName="limit" name="limit" id="limit">
+                <option [value]="5">5</option>
+                <option [value]="10">10</option>
+                <option [value]="20">20</option>
+                <option [value]="50">50</option>
+                <option [value]="100">100</option>
+            </select>
+        </form>
+        de <span class="fw-500 text-secondary">{{ totalCount }}</span>
+    </div>
+
+    <div class="table-actions__paginator">
+        <button [disabled]="!prevPage" class="button-circle" (click)="goToPage(currentPage - 2)">
+            <img src="../assets/Icons/Ic_right_arrow.svg" alt="" />
+        </button>
+        <button
+            class="button-circle ml-5"
+            *ngFor="let page of pages; let i = index"
+            [disabled]="i + 1 === currentPage"
+            (click)="goToPage(i)"
+        >
+            {{ i + 1 }}
+        </button>
+        <button [disabled]="!nextPage" class="button-circle ml-5" (click)="goToPage(currentPage)">
+            <img src="../assets/Icons/Ic_right_arrow.svg" alt="" />
+        </button>
+    </div>
+</div>

@@ -33,4 +33,10 @@
             color: $warn-color;
         }
     }
+
+    &.form-group {
+        &--compact {
+            width: 70px;
+        }
+    }
 }

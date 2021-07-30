@@ -1,0 +1,42 @@
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+    .table {
+        &__row {
+            display: grid;
+            height: 35px;
+            grid-template-columns: auto 30px;
+            align-items: center;
+            background-color: $light-grey;
+            border-bottom: 1px solid$light-color;
+
+            &--head {
+                .table__cell {
+
+                    font-size: 1.4rem;
+                }
+            }
+        }
+
+        &__cell {
+            padding: 5px 15px;
+            font-size: 0.9rem;
+        }
+    }
+}
+
+.table-actions {
+    background: $text-color;
+    border-radius: 10px;
+    color: $light-color;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__counter {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+    }
+}

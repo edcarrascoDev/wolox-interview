@@ -9,9 +9,11 @@ import { SocialBoxComponent } from './social-box/social-box.component';
 import { SpecsComponent } from './specs/specs.component';
 import { FooterComponent } from './footer/footer.component';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CountryListComponent } from './country-list/country-list.component';
 import { HttpService } from '../../http/http.service';
+import { PokemonTableComponent } from './pokemon-table/pokemon-table.component';
+import { TableActionsComponent } from './table-actions/table-actions.component';
 
 @NgModule({
     declarations: [
@@ -24,8 +26,10 @@ import { HttpService } from '../../http/http.service';
         FooterComponent,
         SignUpFormComponent,
         CountryListComponent,
+        PokemonTableComponent,
+        TableActionsComponent,
     ],
-    imports: [CommonModule, RouterModule, ReactiveFormsModule],
+    imports: [CommonModule, RouterModule, ReactiveFormsModule, FormsModule],
     exports: [
         HeaderComponent,
         ButtonComponent,
@@ -35,6 +39,7 @@ import { HttpService } from '../../http/http.service';
         FooterComponent,
         SignUpFormComponent,
         CountryListComponent,
+        PokemonTableComponent,
     ],
     providers: [HttpService],
 })

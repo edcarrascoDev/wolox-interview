@@ -1,0 +1,24 @@
+<app-table-actions
+    [totalCount]="pokemonResponse?.count"
+    [nextPage]="pokemonResponse?.next"
+    [prevPage]="pokemonResponse?.previous"
+    (emitLimitChange)="limit = $event.toString(); getAllPokemon()"
+    (emitOffsetChange)="offset = $event.toString(); getAllPokemon()"
+></app-table-actions>
+<div class="table">
+    <div class="table__row table__row--head">
+        <div class="table__cell fw-600">Nombre</div>
+        <div class="table__cell"></div>
+    </div>
+    <div *ngFor="let item of pokemonResponse?.results" class="table__row table__row--body">
+        <div class="table__cell fw-500">{{ item.name }}</div>
+        <div class="table__cell"></div>
+    </div>
+</div>
+<app-table-actions
+    [totalCount]="pokemonResponse?.count"
+    [nextPage]="pokemonResponse?.next"
+    [prevPage]="pokemonResponse?.previous"
+    (emitLimitChange)="limit = $event.toString(); getAllPokemon()"
+    (emitOffsetChange)="offset = $event.toString(); getAllPokemon()"
+></app-table-actions>

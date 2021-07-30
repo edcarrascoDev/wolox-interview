@@ -1,0 +1,22 @@
+.button-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    outline: none;
+    border: 0;
+    background: $light-color;
+    font-weight: 600;
+    color: $text-color;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $text-font-stack;
+
+    &:not(disabled) {
+        cursor: pointer;
+    }
+
+    img {
+        width: 80%;
+    }
+}

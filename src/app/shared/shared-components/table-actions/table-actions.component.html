@@ -17,15 +17,25 @@
         <button [disabled]="!prevPage" class="button-circle" (click)="goToPage(currentPage - 2)">
             <img src="../assets/Icons/Ic_right_arrow.svg" alt="" />
         </button>
+        <ng-container *ngFor="let page of pagesToShow">
+            <span class="ml-5" *ngIf="showMaxDots(page)">...</span>
+            <button
+                class="button-circle ml-5"
+                [class.button-circle--not-current]="currentPage !== page"
+                *ngIf="page > 0"
+                [disabled]="page === currentPage"
+                (click)="goToPage(page - 1)"
+            >
+                {{ page }}
+            </button>
+            <span class="ml-5" *ngIf="pagesToShow[1] > 2 && page === 1">...</span>
+        </ng-container>
         <button
+            [disabled]="!nextPage"
             class="button-circle ml-5"
-            *ngFor="let page of pages; let i = index"
-            [disabled]="i + 1 === currentPage"
-            (click)="goToPage(i)"
+            style="transform: scaleX(-1)"
+            (click)="goToPage(currentPage)"
         >
-            {{ i + 1 }}
-        </button>
-        <button [disabled]="!nextPage" class="button-circle ml-5" (click)="goToPage(currentPage)">
             <img src="../assets/Icons/Ic_right_arrow.svg" alt="" />
         </button>
     </div>

@@ -12,7 +12,11 @@
     align-items: center;
     font-family: $text-font-stack;
 
-    &:not(disabled) {
+    &:disabled {
+        background: $dark-grey;
+    }
+
+    &:not(:disabled) {
         cursor: pointer;
     }
 

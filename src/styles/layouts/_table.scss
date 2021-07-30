@@ -39,4 +39,24 @@
         align-items: baseline;
         gap: 10px;
     }
+
+    &__paginator {
+        display: flex;
+        align-items: center;
+    }
+
+    @include media-breakpoint-down(sm) {
+
+            flex-direction: column-reverse;
+        gap: 20px;
+
+        .button-circle {
+           &--not-current {
+                display: none;
+            }
+            ~ span {
+                display: none;
+            }
+        }
+    }
 }

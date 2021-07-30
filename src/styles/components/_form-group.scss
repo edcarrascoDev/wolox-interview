@@ -1,0 +1,36 @@
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
+    .form-group {
+        &__label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        &__input {
+            display: block;
+            padding: 0 5px;
+            font-family: $text-font-stack;
+            font-weight: 500;
+            color: $text-color;
+            width: 100%;
+            border-radius: 4px;
+            height: 40px;
+            background: $light-grey;
+            border: 2px solid $light-grey;
+            transition: all ease-in-out 250ms;
+
+            &:focus, &:focus-visible {
+                outline: none;
+                border-color: $secondary-color;
+            }
+        }
+
+        &__error {
+            font-size: 0.7rem;
+            color: $warn-color;
+        }
+    }
+}

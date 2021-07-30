@@ -8,6 +8,8 @@ import { HeroComponent } from './hero/hero.component';
 import { SocialBoxComponent } from './social-box/social-box.component';
 import { SpecsComponent } from './specs/specs.component';
 import { FooterComponent } from './footer/footer.component';
+import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -18,8 +20,9 @@ import { FooterComponent } from './footer/footer.component';
         SocialBoxComponent,
         SpecsComponent,
         FooterComponent,
+        SignUpFormComponent,
     ],
-    imports: [CommonModule, RouterModule],
+    imports: [CommonModule, RouterModule, ReactiveFormsModule],
     exports: [
         HeaderComponent,
         ButtonComponent,
@@ -27,6 +30,7 @@ import { FooterComponent } from './footer/footer.component';
         SocialBoxComponent,
         SpecsComponent,
         FooterComponent,
+        SignUpFormComponent,
     ],
 })
 export class SharedComponentsModule {}

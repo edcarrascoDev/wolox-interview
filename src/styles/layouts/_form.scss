@@ -1,0 +1,10 @@
+.form {
+
+    @include media-breakpoint-up(sm) {
+        &__row {
+
+            display: flex;
+            gap: 15px;
+        }
+    }
+}

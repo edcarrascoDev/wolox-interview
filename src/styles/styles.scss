@@ -10,13 +10,17 @@
 'base/helpers';
 
 @import
+'layouts/card',
 'layouts/footer',
+'layouts/form',
 'layouts/header',
 'layouts/hero',
 'layouts/nav',
 'layouts/social-box',
+'layouts/sign-up',
 'layouts/specs';
 
 @import
 'components/button',
+'components/form-group',
 'components/heading';

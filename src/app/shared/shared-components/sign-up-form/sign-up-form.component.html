@@ -67,6 +67,10 @@
         </div>
     </div>
 
+    <div class="form__error" *ngIf="formError">
+        <span>{{ formError }}</span>
+    </div>
+
     <div class="form__actions text-center mt-30">
         <app-button (emitClick)="submit()">Registrarme</app-button>
     </div>

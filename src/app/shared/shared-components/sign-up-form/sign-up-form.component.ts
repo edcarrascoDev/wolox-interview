@@ -16,6 +16,8 @@ import { Router } from '@angular/router';
 export class SignUpFormComponent extends CommonComponent implements OnInit {
     form: FormGroup;
 
+    formError: string;
+
     constructor(
         private formBuilder: FormBuilder,
         private uiService: UiService,
@@ -52,7 +54,11 @@ export class SignUpFormComponent extends CommonComponent implements OnInit {
 
     listenToFormChange() {}
 
-    markControlsAsTouched() {}
+    markControlsAsTouched() {
+        Object.keys(this.form.controls).forEach((controlName) => {
+            this.form.controls[controlName].markAsTouched();
+        });
+    }
 
     setCountryValue(country: Country) {
         if (country) {
@@ -81,8 +87,12 @@ export class SignUpFormComponent extends CommonComponent implements OnInit {
                         this.router.navigate(['/pokemon']);
                     }
                 });
+        } else if (this.form.get('password').value !== this.form.get('confirmPassword').value) {
+            this.formError = 'Las contraseñas tienen que coincidir.';
         } else {
             this.markControlsAsTouched();
+            this.formError =
+                'Por favor revisa que todos los campos esten correctamente diligenciados.';
         }
     }
 }

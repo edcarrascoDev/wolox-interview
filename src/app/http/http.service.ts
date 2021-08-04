@@ -17,7 +17,7 @@ export class HttpService {
 
     postRegistry(body: SignUpRequest) {
         return this.http.post(
-            'http://private-8e8921-woloxfrontendinverview.apiary-mock.com/signup',
+            'https://private-8e8921-woloxfrontendinverview.apiary-mock.com/signup',
             body,
         );
     }

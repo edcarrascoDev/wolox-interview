@@ -9,15 +9,18 @@
             class="nav__item"
         >
             <ng-template [ngIf]="menu.isButton">
-                <app-button [routerLink]="[menu.link]" [style]="buttonStyle.Stroked">{{
-                    menu.title
-                }}</app-button>
+                <app-button
+                    [routerLink]="[menu.link]"
+                    (click)="this.toggleMenu()"
+                    [style]="buttonStyle.Stroked"
+                    >{{ menu.title }}</app-button
+                >
             </ng-template>
             <ng-template [ngIf]="menu.hasScrollEffect">
                 <a (click)="scrollTo(menu.sectionId)">{{ menu.title }}</a>
             </ng-template>
             <ng-template [ngIf]="!menu.hasScrollEffect && !menu.isButton">
-                <a [routerLink]="[menu.link]"> {{ menu.title }} </a>
+                <a [routerLink]="[menu.link]" (click)="this.toggleMenu()"> {{ menu.title }} </a>
             </ng-template>
         </li>
     </ul>

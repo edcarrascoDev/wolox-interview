@@ -1,5 +1,13 @@
 .form {
 
+    &__error {
+        span {
+            font-size: 0.8rem;
+            color: $warn-color;
+            font-weight: 500;
+        }
+    }
+
     @include media-breakpoint-up(sm) {
         &__row {
 

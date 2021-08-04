@@ -6,6 +6,7 @@ import { UiService } from '../../../ui/ui.service';
 import { Country } from '../../definitions/models';
 import { HttpService } from '../../../http/http.service';
 import { take } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-sign-up-form',
@@ -19,6 +20,7 @@ export class SignUpFormComponent extends CommonComponent implements OnInit {
         private formBuilder: FormBuilder,
         private uiService: UiService,
         private httpService: HttpService,
+        private router: Router,
     ) {
         super();
     }
@@ -76,6 +78,7 @@ export class SignUpFormComponent extends CommonComponent implements OnInit {
                 .subscribe((response) => {
                     if (response) {
                         this.uiService.setLocalStorage('user', this.form.value);
+                        this.router.navigate(['/pokemon']);
                     }
                 });
         } else {

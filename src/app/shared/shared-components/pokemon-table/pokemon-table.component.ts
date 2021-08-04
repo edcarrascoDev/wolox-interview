@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../../http/http.service';
 import { CommonComponent } from '../../abstract/common-component';
 import { take } from 'rxjs/operators';
-import { PokemonResponse } from '../../definitions/models';
+import { Pokemon, PokemonResponse } from '../../definitions/models';
+import { ButtonSize } from '../../definitions/enum';
 
 @Component({
     selector: 'app-pokemon-table',
@@ -13,6 +14,13 @@ export class PokemonTableComponent extends CommonComponent implements OnInit {
     limit = '20';
     offset = '0';
     pokemonResponse: PokemonResponse;
+
+    pokemonSelected: Pokemon[] = [];
+
+    buttonSize = ButtonSize.Small;
+
+    openModal = false;
+
     constructor(private httpService: HttpService) {
         super();
     }
@@ -28,5 +36,13 @@ export class PokemonTableComponent extends CommonComponent implements OnInit {
             .subscribe((response) => {
                 this.pokemonResponse = response;
             });
+    }
+
+    onPokemonSelected(pokemon: Pokemon) {
+        if (!this.pokemonSelected.includes(pokemon)) {
+            this.pokemonSelected = [...this.pokemonSelected, pokemon];
+        } else {
+            this.pokemonSelected.splice(this.pokemonSelected.indexOf(pokemon), 1);
+        }
     }
 }

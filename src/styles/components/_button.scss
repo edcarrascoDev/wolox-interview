@@ -1,8 +1,9 @@
 .wx-button {
     min-width: 180px;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     height: $button-height;
-    line-height: $button-height;
     outline: none;
     background-color: transparent;
     border: 1px solid;
@@ -11,52 +12,70 @@
     font-family: $text-font-stack;
     text-align: center;
     text-decoration: none;
+    opacity: 1;
+    transition: all ease-in-out 250ms;
+
+    &:not(:disabled) {
+        cursor: pointer;
+        &.wx-button {
+            &--primary {
+                border-color: $primary-color;
+            }
+
+            &--success {
+                border-color: $secondary-color;
+            }
+
+            &--warn {
+                border-color: $warn-color;
+            }
+
+            &--raised {
+                color: $light-color;
+
+                &.wx-button {
+                    &--primary {
+                        background-color: $primary-color;
+                    }
+
+                    &--success {
+                        background-color: $secondary-color;
+                    }
+
+                    &--warn {
+                        background-color: $warn-color;
+                    }
+                }
+            }
+
+            &--stroked {
+                &.wx-button {
+                    &--primary {
+                        color: $primary-color;
+                    }
+
+                    &--success {
+                        color: $secondary-color;
+                    }
+
+                    &--warn {
+                        color: $warn-color;
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
 
     &.wx-button {
-        &--primary {
-            border-color: $primary-color;
-        }
-
-        &--success {
-            border-color: $secondary-color;
-        }
-
-        &--warn {
-            border-color: $warn-color;
-        }
-
-        &--raised {
-            color: $light-color;
-
-            &.wx-button {
-                &--primary {
-                    background-color: $primary-color;
-                }
-
-                &--success {
-                    background-color: $secondary-color;
-                }
-
-                &--warn {
-                    background-color: $warn-color;
-                }
-            }
-        }
-
-        &--stroked {
-            &.wx-button {
-                &--primary {
-                    color: $primary-color;
-                }
-
-                &--success {
-                    color: $secondary-color;
-                }
-
-                &--warn {
-                    color: $warn-color;
-                }
-            }
+        &--small {
+            min-width: 100px;
+            height: $button-height-small;
+            border-radius: $button-height-small / 2;
+            font-size: 0.8rem;
         }
     }
 }

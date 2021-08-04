@@ -15,7 +15,9 @@
 'layouts/form',
 'layouts/header',
 'layouts/hero',
+'layouts/modal',
 'layouts/nav',
+'layouts/pokemon-info',
 'layouts/social-box',
 'layouts/section',
 'layouts/specs',
@@ -24,6 +26,7 @@
 @import
 'components/button',
 'components/button-circle',
+'components/checkbox',
 'components/country-select',
 'components/form-group',
 'components/heading';

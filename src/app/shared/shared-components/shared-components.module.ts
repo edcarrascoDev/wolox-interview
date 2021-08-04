@@ -14,8 +14,13 @@ import { CountryListComponent } from './country-list/country-list.component';
 import { HttpService } from '../../http/http.service';
 import { PokemonTableComponent } from './pokemon-table/pokemon-table.component';
 import { TableActionsComponent } from './table-actions/table-actions.component';
+import { TableHeadComponent } from './table-head/table-head.component';
+import { ModalComponent } from './modal/modal.component';
+import { PokemonInfoComponent } from './pokemon-info/pokemon-info.component';
+import { PipesModule } from '../pipes/pipes.module';
 
 @NgModule({
+    imports: [CommonModule, RouterModule, ReactiveFormsModule, FormsModule, PipesModule],
     declarations: [
         HeaderComponent,
         ButtonComponent,
@@ -28,8 +33,10 @@ import { TableActionsComponent } from './table-actions/table-actions.component';
         CountryListComponent,
         PokemonTableComponent,
         TableActionsComponent,
+        TableHeadComponent,
+        ModalComponent,
+        PokemonInfoComponent,
     ],
-    imports: [CommonModule, RouterModule, ReactiveFormsModule, FormsModule],
     exports: [
         HeaderComponent,
         ButtonComponent,
@@ -40,6 +47,7 @@ import { TableActionsComponent } from './table-actions/table-actions.component';
         SignUpFormComponent,
         CountryListComponent,
         PokemonTableComponent,
+        PipesModule,
     ],
     providers: [HttpService],
 })

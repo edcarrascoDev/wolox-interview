@@ -1,0 +1,45 @@
+.wx-checkbox {
+    .wx-checkbox {
+        &__label {
+            width: 18px;
+            border: 1px solid $dark-grey;
+            background: $light-color;
+            height: 18px;
+            display: inline-block;
+            border-radius: 4px;
+            position: relative;
+            transition: all ease-in-out 250ms;
+        }
+
+        &__input {
+            visibility: hidden;
+
+            &:checked ~ .wx-checkbox__label {
+                background: $primary-color;
+                border-color: $primary-color;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    width: 10px;
+                    height: 4px;
+                    border-left: 2px solid;
+                    border-bottom: 2px solid;
+                    border-color: $light-color;
+                    top: 40%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) rotateZ(312deg);
+                }
+            }
+
+            &:not(:disabled) ~ .wx-checkbox__label {
+                cursor: pointer;
+            }
+
+            &:disabled ~ .wx-checkbox__label {
+                background: $dark-grey;
+                opacity: 0.4;
+            }
+        }
+    }
+}

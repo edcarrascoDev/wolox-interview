@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { PokemonResponse, SignUpRequest } from '../shared/definitions/models';
+import { Pokemon, PokemonResponse, SignUpRequest } from '../shared/definitions/models';
 
 @Injectable({
     providedIn: 'root',
@@ -24,5 +24,9 @@ export class HttpService {
 
     getPokemons(limit: string, offset: string): Observable<PokemonResponse> {
         return this.http.get<PokemonResponse>(this.pokemonUrl, { params: { limit, offset } });
+    }
+
+    getPokemonByName(name: string): Observable<Pokemon> {
+        return this.http.get<Pokemon>(`${this.pokemonUrl}${name}`);
     }
 }

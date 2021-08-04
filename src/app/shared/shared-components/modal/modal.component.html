@@ -1,0 +1,26 @@
+<div class="modal" *ngIf="showModal">
+    <div class="modal__backdrop" (click)="onClose()"></div>
+    <div class="modal__container">
+        <div class="card">
+            <div class="card__head" *ngIf="title">
+                {{ title }}
+            </div>
+            <div class="card__container">
+                <ng-template [ngIf]="pokemonResponse?.length > 0">
+                    <app-pokemon-info
+                        *ngFor="let pokemon of pokemonResponse"
+                        [pokemon]="pokemon"
+                    ></app-pokemon-info>
+                </ng-template>
+            </div>
+            <div class="card__actions mt-15">
+                <app-button *ngIf="submitText" (click)="onSubmit()" [color]="buttonColor.Primary">{{
+                    submitText
+                }}</app-button>
+                <app-button (click)="onClose()" [color]="buttonColor.Warn">{{
+                    closeText
+                }}</app-button>
+            </div>
+        </div>
+    </div>
+</div>

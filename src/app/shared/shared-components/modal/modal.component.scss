@@ -1,0 +1,26 @@
+@import "src/styles/abstracts/mixins";
+.card {
+    max-width: 98vw;
+
+    .card__container {
+        padding: 0;
+        overflow-y: auto;
+        max-height: 80vh;
+
+        app-pokemon-info {
+            flex: 1;
+            min-width: 300px;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .card {
+
+            max-width: 90vw;
+            &__container {
+                display: flex;
+                gap: 20px;
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+<div class="pokemon-info mb-20">
+    <div class="pokemon-info__head">
+        <h2 class="heading heading--h4 text-capitalize">{{ pokemon.name | pokemonName }}</h2>
+        <span class="pokemon-info__id">ID: {{ pokemon.id }}</span>
+    </div>
+    <div class="pokemon-info__content">
+        <div class="pokemon-info__generation mt-10 mb-20">
+            Generación:
+            <span class="fw-900">{{ generationToShow(pokemon.generation.name) }}</span>
+        </div>
+        <div class="pokemon-info__effects">
+            <ul>
+                <li *ngFor="let effect of filteredEffects(pokemon.effect_entries)">
+                    {{ effect.effect }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
